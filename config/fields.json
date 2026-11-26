@@ -1,0 +1,48 @@
+{
+  "fields": [
+    { "id": "status", "label": "Status", "builtIn": true, "show": ["hover", "drawer"] },
+    { "id": "registration", "label": "Registration", "builtIn": true, "show": ["hover", "drawer"] },
+    { "id": "zone", "label": "Area", "builtIn": true, "show": ["hover", "drawer"] },
+    { "id": "speed", "label": "Speed", "builtIn": true, "show": ["hover", "drawer"] },
+    { "id": "battery", "label": "Battery", "builtIn": true, "show": ["hover", "drawer"] },
+    { "id": "operator", "label": "Operated by", "builtIn": true, "show": ["drawer"] },
+    { "id": "lastSeen", "label": "Last report", "builtIn": true, "show": ["hover", "drawer"] },
+    { "id": "fault", "label": "Fault", "builtIn": true, "show": ["drawer"] },
+    { "id": "engineHours", "label": "Engine hours", "builtIn": true, "show": ["drawer"] },
+    {
+      "id": "task", "label": "Current task", "type": "enum",
+      "values": ["Unassigned", "Pushback", "Tow", "Baggage run", "Positioning", "Servicing"],
+      "show": ["hover", "drawer"], "filter": { "kind": "in" },
+      "source": { "vendorA": { "path": "job.type", "map": { "NONE": 0, "PUSH": 1, "TOW": 2, "BAG": 3, "POS": 4, "SVC": 5 } } }
+    },
+    {
+      "id": "driverAssigned", "label": "Driver assigned", "type": "boolean", "show": ["drawer"],
+      "source": { "vendorA": { "path": "driver.logged_in" } }
+    },
+    {
+      "id": "fuelLevel", "label": "Fuel", "type": "number", "unit": "%", "decimals": 0,
+      "show": ["hover", "drawer"], "filter": { "kind": "min", "steps": [25, 50] },
+      "source": { "vendorA": { "path": "telemetry.fuel_pct" } }
+    },
+    {
+      "id": "hydraulicPressure", "label": "Hydraulic pressure", "type": "number", "unit": "bar", "decimals": 0,
+      "show": ["drawer"],
+      "source": { "vendorA": { "path": "telemetry.hyd_kpa", "scale": 0.01 } }
+    }
+  ],
+  "sources": {
+    "vendorA": {
+      "deviceId": { "path": "unit.id" },
+      "type": { "path": "unit.kind", "map": { "PUSHBACK": "pushback-tug", "TBL": "towbarless-tug", "BAGTRACTOR": "baggage-tractor", "BELT": "belt-loader", "ULD": "uld-loader", "GPU": "gpu", "STEPS": "passenger-steps", "BUS": "airside-bus", "CATERING": "catering-truck", "FUEL": "fuel-bowser", "WATER": "water-waste", "DEICE": "de-icer" } },
+      "operator": { "path": "unit.owner" },
+      "ts": { "path": "time", "as": "iso" },
+      "lat": { "path": "pos.lat" },
+      "lon": { "path": "pos.lon" },
+      "heading": { "path": "pos.hdg" },
+      "speed": { "path": "pos.spd_ms", "scale": 3.6 },
+      "status": { "path": "state", "map": { "DRIVING": 0, "IDLE": 1, "PARKED": 1, "FAULT": 2 } },
+      "battery": { "path": "bat.soc" },
+      "fault": { "path": "dtc", "map": { "P0A80": 2, "C0040": 3, "U0100": 5, "C0750": 6, "B1342": 4, "P0087": 1 } }
+    }
+  }
+}

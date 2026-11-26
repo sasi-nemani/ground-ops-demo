@@ -1,0 +1,275 @@
+{
+  "title": "Gatwick ground equipment",
+  "airport": "LGW",
+  "theme": "day",
+  "map": {
+    "center": [
+      -0.1805,
+      51.1545
+    ],
+    "zoom": 13.6,
+    "minZoom": 12.8,
+    "maxZoom": 19,
+    "bounds": [
+      [
+        -0.24,
+        51.135
+      ],
+      [
+        -0.125,
+        51.172
+      ]
+    ],
+    "basemap": {
+      "kind": "airfield",
+      "url": "./data/lgw/airfield.json",
+      "previewUrl": "./data/lgw/airfield-preview.svg",
+      "attribution": "© OpenStreetMap contributors"
+    }
+  },
+  "feed": {
+    "source": "simulated",
+    "url": "",
+    "updateIntervalMs": 1000,
+    "staleAfterSec": 30
+  },
+  "simulator": {
+    "deviceCount": 2500,
+    "seed": 20261126,
+    "headingMissingShare": 0.25,
+    "routesUrl": "./data/lgw/routes.json"
+  },
+  "equipmentTypes": [
+    {
+      "id": "pushback-tug",
+      "label": "Pushback tug",
+      "icon": "tug",
+      "color": "#1D5FBF",
+      "share": 0.04,
+      "maxSpeedKmh": 15,
+      "taxiwayShare": 0.4
+    },
+    {
+      "id": "towbarless-tug",
+      "label": "Towbarless tractor",
+      "icon": "tbl",
+      "color": "#23407A",
+      "share": 0.03,
+      "maxSpeedKmh": 25,
+      "taxiwayShare": 0.6
+    },
+    {
+      "id": "baggage-tractor",
+      "label": "Baggage tractor",
+      "icon": "tractor",
+      "color": "#0E97A6",
+      "share": 0.2,
+      "maxSpeedKmh": 25
+    },
+    {
+      "id": "belt-loader",
+      "label": "Belt loader",
+      "icon": "belt",
+      "color": "#E0861A",
+      "share": 0.1,
+      "maxSpeedKmh": 15
+    },
+    {
+      "id": "uld-loader",
+      "label": "ULD loader",
+      "icon": "loader",
+      "color": "#6D4C2F",
+      "share": 0.07,
+      "maxSpeedKmh": 10
+    },
+    {
+      "id": "gpu",
+      "label": "Ground power unit",
+      "icon": "gpu",
+      "color": "#C13A9C",
+      "share": 0.09,
+      "maxSpeedKmh": 15
+    },
+    {
+      "id": "passenger-steps",
+      "label": "Passenger steps",
+      "icon": "steps",
+      "color": "#5E6F84",
+      "share": 0.06,
+      "maxSpeedKmh": 15
+    },
+    {
+      "id": "airside-bus",
+      "label": "Airside bus",
+      "icon": "bus",
+      "color": "#3EA2E6",
+      "share": 0.05,
+      "maxSpeedKmh": 30
+    },
+    {
+      "id": "catering-truck",
+      "label": "Catering truck",
+      "icon": "catering",
+      "color": "#D4AE0F",
+      "share": 0.06,
+      "maxSpeedKmh": 25
+    },
+    {
+      "id": "fuel-bowser",
+      "label": "Fuel bowser",
+      "icon": "fuel",
+      "color": "#F0708F",
+      "share": 0.05,
+      "maxSpeedKmh": 25
+    },
+    {
+      "id": "water-waste",
+      "label": "Water and waste",
+      "icon": "service",
+      "color": "#A68A5B",
+      "share": 0.08,
+      "maxSpeedKmh": 25
+    },
+    {
+      "id": "de-icer",
+      "label": "De-icer",
+      "icon": "deicer",
+      "color": "#7FC4EE",
+      "share": 0.07,
+      "maxSpeedKmh": 20
+    },
+    {
+      "id": "crew-van",
+      "label": "Van",
+      "icon": "van",
+      "color": "#5446B8",
+      "share": 0.05,
+      "maxSpeedKmh": 25
+    },
+    {
+      "id": "pick-up",
+      "label": "Pick-up",
+      "icon": "pickup",
+      "color": "#9A5BB5",
+      "share": 0.02,
+      "maxSpeedKmh": 25
+    },
+    {
+      "id": "escort-car",
+      "label": "Car",
+      "icon": "car",
+      "color": "#8A7A2E",
+      "share": 0.03,
+      "maxSpeedKmh": 25
+    }
+  ],
+  "zones": [
+    {
+      "id": "pier1",
+      "label": "Pier 1",
+      "center": [
+        -0.1669,
+        51.1555
+      ],
+      "group": "South Terminal"
+    },
+    {
+      "id": "pier2",
+      "label": "Pier 2",
+      "center": [
+        -0.17,
+        51.1549
+      ],
+      "group": "South Terminal"
+    },
+    {
+      "id": "pier3",
+      "label": "Pier 3",
+      "center": [
+        -0.1683,
+        51.1579
+      ],
+      "group": "South Terminal"
+    },
+    {
+      "id": "pier4",
+      "label": "Pier 4",
+      "center": [
+        -0.1709,
+        51.158
+      ],
+      "group": "North Terminal"
+    },
+    {
+      "id": "pier5",
+      "label": "Pier 5",
+      "center": [
+        -0.1731,
+        51.1574
+      ],
+      "group": "North Terminal"
+    },
+    {
+      "id": "pier6",
+      "label": "Pier 6",
+      "center": [
+        -0.1828,
+        51.1615
+      ],
+      "group": "North Terminal"
+    },
+    {
+      "id": "north-remote",
+      "label": "North remote stands",
+      "center": [
+        -0.1795,
+        51.159
+      ]
+    },
+    {
+      "id": "west-remote",
+      "label": "West remote stands",
+      "center": [
+        -0.188,
+        51.1537
+      ]
+    }
+  ],
+  "operators": [
+    "BA Ground Operations",
+    "BA Engineering",
+    "BA Cargo",
+    "Contracted handler"
+  ],
+  "display": {
+    "individualFromZoom": 17,
+    "movingFromZoom": 14.5,
+    "iconsFromZoom": 16,
+    "clusterRadiusPx": 64,
+    "priority": {
+      "statuses": [
+        "fault"
+      ],
+      "movingTypes": [
+        "pushback-tug",
+        "towbarless-tug"
+      ]
+    },
+    "autoTourAfterSec": 90,
+    "splitGroupsFromZoom": 14
+  },
+  "attention": {
+    "apronSpeedLimitKmh": 25,
+    "idleTugAfterMin": 20,
+    "lowBatteryPct": 15,
+    "offlineRecentMin": 10,
+    "minFreeTugsPerArea": 2,
+    "tugTypes": [
+      "pushback-tug",
+      "towbarless-tug"
+    ],
+    "holdSec": {
+      "overspeed": 10
+    }
+  }
+}

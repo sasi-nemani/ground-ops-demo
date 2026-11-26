@@ -1,0 +1,127 @@
+{
+  "defaultRole": "ops-manager",
+  "roles": [
+    {
+      "id": "ops-manager",
+      "label": "Operations manager",
+      "description": "All equipment across the airfield",
+      "equipmentTypes": "*",
+      "zones": "*",
+      "detailFields": [
+        "status",
+        "registration",
+        "zone",
+        "speed",
+        "battery",
+        "operator",
+        "lastSeen",
+        "fault",
+        "task",
+        "driverAssigned",
+        "fuelLevel"
+      ],
+      "attention": [
+        "fault",
+        "tugShortage",
+        "overspeed",
+        "offline",
+        "lowBattery"
+      ]
+    },
+    {
+      "id": "t5-ramp-controller",
+      "label": "T5 ramp controller",
+      "description": "Turnaround equipment on the T5 stands",
+      "equipmentTypes": [
+        "pushback-tug",
+        "towbarless-tug",
+        "baggage-tractor",
+        "belt-loader",
+        "uld-loader",
+        "gpu",
+        "passenger-steps"
+      ],
+      "zones": [
+        "t5a",
+        "t5b",
+        "t5c"
+      ],
+      "detailFields": [
+        "status",
+        "zone",
+        "speed",
+        "operator",
+        "lastSeen",
+        "task",
+        "driverAssigned"
+      ],
+      "defaults": {
+        "hiddenStatuses": [
+          "offline"
+        ]
+      },
+      "attention": [
+        "fault",
+        "tugShortage",
+        "overspeed",
+        "idleTug"
+      ]
+    },
+    {
+      "id": "tow-coordinator",
+      "label": "Tow coordinator",
+      "description": "Tugs and towbarless tractors only",
+      "equipmentTypes": [
+        "pushback-tug",
+        "towbarless-tug"
+      ],
+      "zones": "*",
+      "detailFields": [
+        "status",
+        "zone",
+        "speed",
+        "battery",
+        "operator",
+        "lastSeen",
+        "task",
+        "driverAssigned"
+      ],
+      "attention": [
+        "tugShortage",
+        "idleTug",
+        "fault",
+        "lowBattery"
+      ]
+    },
+    {
+      "id": "fleet-engineer",
+      "label": "Fleet engineer",
+      "description": "Health of every vehicle: faults, battery, hours",
+      "equipmentTypes": "*",
+      "zones": "*",
+      "detailFields": [
+        "status",
+        "registration",
+        "fault",
+        "battery",
+        "engineHours",
+        "zone",
+        "operator",
+        "lastSeen",
+        "hydraulicPressure",
+        "fuelLevel"
+      ],
+      "defaults": {
+        "hiddenStatuses": [
+          "moving"
+        ]
+      },
+      "attention": [
+        "fault",
+        "lowBattery",
+        "offline",
+        "overspeed"
+      ]
+    }
+  ]
+}
